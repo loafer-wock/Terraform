@@ -102,7 +102,6 @@ resource "aws_route_table" "sub_db_rt" {
     }
 }
 
-##### dcifvdual_개별_Route_Table_Association #####
 resource "aws_route_table_association" "rt_pub_asso" {
     count = length(var.sub_pub_cidr)
     subnet_id = aws_subnet.sub_pub[count.index].id
